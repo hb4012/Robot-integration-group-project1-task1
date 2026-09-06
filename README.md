@@ -30,6 +30,7 @@ bht/
 ├── ros2_ws/src/desktop_object_detector/
 ├── run_camera.sh
 ├── run_ros2.sh
+├── show_ros2_topics.sh
 └── requirements.txt
 ```
 
@@ -149,6 +150,19 @@ cd /home/nvidia/bht
 /bin/bash ./run_ros2.sh 0
 ```
 
+The default run uses CUDA when available. Runtime parameters can be overridden without editing the source code:
+
+```bash
+CONF=0.40 IOU=0.45 IMGSZ=640 DEVICE=auto DISPLAY_OUTPUT=true \
+  /bin/bash ./run_ros2.sh 0
+```
+
+For an SSH-only Jetson session, disable the display window:
+
+```bash
+DISPLAY_OUTPUT=false /bin/bash ./run_ros2.sh 0
+```
+
 The script automatically performs these operations:
 
 1. Sources the installed ROS 2 environment.
@@ -165,6 +179,12 @@ source /home/nvidia/bht/ros2_ws/install/setup.bash
 
 ros2 topic list
 ros2 topic echo /desktop_detector/detections
+```
+
+The included helper prints the available topic types and detector topic details:
+
+```bash
+/bin/bash ./show_ros2_topics.sh
 ```
 
 To view only the FPS stream:
@@ -208,7 +228,7 @@ results/ros2_YYYYMMDD_HHMMSS/
 └── summary.json
 ```
 
-`detections.jsonl` stores one published JSON message per line. `summary.json` records the total message count, frames containing detections, total boxes, and per-class counts.
+`detections.jsonl` stores one published JSON message per line. Each message contains the frame identifier, ROS timestamp, image dimensions, processing time, FPS, detection count, class names, confidence scores, and bounding boxes. `summary.json` records the duration, message count, malformed-message count, detected frames, total boxes, FPS statistics, and per-class counts. The summary is written atomically when the ROS 2 run stops.
 
 ## 8. Optional Dataset Validation and Training on Jetson
 
