@@ -1,0 +1,20 @@
+{
+  "classes": ["bottle", "mouse", "laptop"],
+  "train": {
+    "images": 734,
+    "labels": 734,
+    "boxes": 1255,
+    "class_counts": {"bottle": 611, "mouse": 196, "laptop": 448}
+  },
+  "val": {
+    "images": 159,
+    "labels": 159,
+    "boxes": 228,
+    "class_counts": {"bottle": 72, "mouse": 49, "laptop": 107}
+  },
+  "total": {
+    "images": 893,
+    "labels": 893,
+    "boxes": 1483
+  }
+}

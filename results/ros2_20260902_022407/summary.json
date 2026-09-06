@@ -1,0 +1,10 @@
+{
+  "messages": 376,
+  "frames_with_detections": 363,
+  "detection_counts": {
+    "mouse": 440,
+    "laptop": 68,
+    "bottle": 243
+  },
+  "source_topic": "/desktop_detector/detections"
+}

@@ -1,0 +1,9 @@
+{
+  "inference_model": "best.pt",
+  "architecture": "YOLO11n",
+  "size_bytes": 5464282,
+  "sha256": "7e6316bb660f6436b57d5e5410e8d255b7a228eadf42db57c9262bd1befd8d61",
+  "checkpoint_class_names": ["bottle", "cup", "mouse", "laptop"],
+  "runtime_target_names": ["bottle", "mouse", "laptop"],
+  "note": "The supplied trained checkpoint contains four class names. Runtime scripts filter out cup and publish only the three target classes."
+}

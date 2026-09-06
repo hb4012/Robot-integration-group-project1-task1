@@ -1,0 +1,10 @@
+{
+  "architecture": "YOLO11n",
+  "epochs_completed": 81,
+  "image_size": 640,
+  "batch": 8,
+  "device": "mps",
+  "seed": 42,
+  "checkpoint": "../../models/best.pt",
+  "metrics_file": "results.csv"
+}

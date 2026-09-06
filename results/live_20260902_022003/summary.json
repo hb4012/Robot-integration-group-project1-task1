@@ -1,0 +1,17 @@
+{
+  "model": "/home/nvidia/bht/models/best.pt",
+  "source": "0",
+  "frames": 411,
+  "duration_seconds": 57.956,
+  "average_end_to_end_fps": 7.092,
+  "detection_counts": {
+    "laptop": 101,
+    "mouse": 518,
+    "bottle": 171
+  },
+  "confidence_threshold": 0.35,
+  "image_size": 640,
+  "device": "0",
+  "simultaneous_two_classes_saved": true,
+  "jetson_5_fps_requirement_met": true
+}
